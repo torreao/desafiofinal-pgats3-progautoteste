@@ -1,0 +1,24 @@
+{
+  "name": "desafiofinal-pgats3-progautoteste",
+  "version": "1.0.0",
+  "description": "Repositório criado para resolução do Trabalho de Conclusão proposto na PGATS3 - Programação para Automação de Testes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torreao/desafiofinal-pgats3-progautoteste.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/torreao/desafiofinal-pgats3-progautoteste/issues"
+  },
+  "homepage": "https://github.com/torreao/desafiofinal-pgats3-progautoteste#readme",
+  "dependencies": {
+    "mocha": "^11.7.6"
+  }
+}
