@@ -1,0 +1,35 @@
+name: Pipeline de Testes Automatizados
+
+on:
+  push:
+    branches: [ "main", "master" ]          # Disparo por Push
+  schedule:
+    - cron: '0 4,11 * * *'                  # Disparo Agendado (Todos os dias, 00h00 e08h00)
+  workflow_dispatch:                        # Disparo Manual
+
+jobs:
+  test-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-packages: '24.15.0'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar os Testes Automatizados
+        run: npm run test
+
+      - name: Upload do Relatório de Testes (Artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-de-testes
+          path: mochawesome-report/
+          retention-days: 5
