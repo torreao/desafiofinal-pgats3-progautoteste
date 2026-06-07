@@ -2,10 +2,10 @@ name: Pipeline de Testes Automatizados
 
 on:
   push:
-    branches: [ "main", "master" ]          # Disparo por Push
+    branches: [ "main", "master" ]          
   schedule:
-    - cron: '0 4,11 * * *'                  # Disparo Agendado (Todos os dias, 00h00 e08h00)
-  workflow_dispatch:                        # Disparo Manual
+    - cron: '0 4,11 * * *'
+  workflow_dispatch:                        
 
 jobs:
   test-automation:
@@ -18,7 +18,8 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-packages: '24.15.0'
+          node-version: '22.x'             
+          cache: 'npm'                      
 
       - name: Instalar dependências
         run: npm ci
