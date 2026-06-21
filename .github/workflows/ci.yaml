@@ -33,4 +33,4 @@ jobs:
         with:
           name: relatorio-de-testes
           path: mochawesome-report/
-          retention-days: 5
+          retention-days: 30
